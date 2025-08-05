@@ -65,7 +65,7 @@ function doPost(e) {
 
 ## 📸 スクリーンショット
 
-<img width="200" height="432" alt="IMG_7177" src="https://github.com/user-attachments/assets/75519070-a2f6-462e-990a-a4577655be05" />
+<img width="200" height="432" alt="mosaic_20250805192743" src="https://github.com/user-attachments/assets/f1eb2067-57e3-4afb-abdb-9f90bf5ceca5" />
 
 ---
 
