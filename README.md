@@ -1,97 +1,81 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📩 メッセージ送信アプリ（React Native + Google Apps Script）
 
-# Getting Started
+このアプリは、React Native で作成されたシンプルなメッセージ送信アプリです。
+入力されたメッセージを Google Apps Script 経由で送信し、ステータス付きで表示します。
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📱 主な機能
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+* メッセージの送信（GAS に POST）
+* 送信結果（成功 / 失敗 / 通信中）のステータス表示
+* 最新メッセージを上部に表示（`FlatList` + `inverted`）
+* キーボードを閉じると送信しやすくなる設計
+* 通信中にスピナー表示で状態がわかりやすい
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🏗️ 使用技術
 
-# OR using Yarn
-yarn start
+* React Native (TypeScript)
+* Google Apps Script
+* fetch API
+* FlatList / ActivityIndicator / KeyboardAvoidingView など
+
+---
+
+## 🚀 セットアップ
+
+```bash
+# 依存パッケージのインストール
+npm install
+
+# Expo を使う場合
+npx expo start
+
+# CLI の場合
+npx react-native run-ios
+# または
+npx react-native run-android
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 🔧 Google Apps Script の設定
 
-### Android
+1. Google Apps Script で新規プロジェクトを作成
+2. 以下のコードを追加
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```javascript
+function doPost(e) {
+  const content = e.postData.getDataAsString();
+  return ContentService.createTextOutput(
+    JSON.stringify({
+      status: 200,
+      message: '受信しました: ' + content
+    })
+  ).setMimeType(ContentService.MimeType.JSON);
+}
 ```
 
-### iOS
+3. ウェブアプリとして公開
+4. GAS\_URL に URL を設定
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+---
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 📸 スクリーンショット
 
-```sh
-bundle install
-```
+> 必要に応じて追加して下さい
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 📄 ライセンス
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+このプロジェクトは MIT ライセンスで公開されています。
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 🙌 作成者
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+* 名前: あなたの名前
+* GitHub: [@your-username](https://github.com/your-username)
