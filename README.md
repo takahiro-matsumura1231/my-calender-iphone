@@ -65,17 +65,17 @@ function doPost(e) {
 
 ## 📸 スクリーンショット
 
-> 必要に応じて追加して下さい
+<img width="1170" height="2532" alt="IMG_7177" src="https://github.com/user-attachments/assets/cd1d0e23-9cc4-4ab0-a1a8-5771d8b99262" />
+
 
 ---
 
 ## 📄 ライセンス
 
-このプロジェクトは MIT ライセンスで公開されています。
 
 ---
 
 ## 🙌 作成者
 
-* 名前: あなたの名前
-* GitHub: [@your-username](https://github.com/your-username)
+* 名前:　Takahiro Matsumura
+* GitHub: @takahiro.matsumura1231@gmail.com
